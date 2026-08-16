@@ -1,14 +1,13 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Code2 } from 'lucide-react'
 
-import MathSpaceBackground from '../MathSpaceBackground/MathSpaceBackground'
 
 import './Hero.css'
 
 function Hero() {
   return (
     <section className="hero" id="inicio">
-      <MathSpaceBackground />
+      
 
       <div className="hero__fade" />
 

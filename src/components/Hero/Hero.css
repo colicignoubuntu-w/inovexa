@@ -25,11 +25,13 @@
   background:
     linear-gradient(
       90deg,
-      rgba(3, 5, 10, 0.92) 0%,
-      rgba(3, 5, 10, 0.68) 37%,
-      rgba(3, 5, 10, 0.15) 65%,
-      rgba(3, 5, 10, 0.2) 100%
+      rgba(3, 5, 10, 0.72) 0%,
+      rgba(3, 5, 10, 0.52) 35%,
+      rgba(3, 5, 10, 0.12) 65%,
+      rgba(3, 5, 10, 0.08) 100%
     );
+
+  pointer-events: none;
 }
 
 .hero__container {
@@ -47,6 +49,9 @@
 }
 
 .hero__content {
+  position: relative;
+  z-index: 6;
+
   max-width: 720px;
 }
 
@@ -81,6 +86,9 @@
 }
 
 .hero__title {
+  position: relative;
+  z-index: 6;
+
   color: var(--color-white);
 
   font-size: clamp(4rem, 9vw, 8rem);
@@ -110,6 +118,9 @@
 }
 
 .hero__description {
+  position: relative;
+  z-index: 6;
+
   max-width: 540px;
 
   margin-top: 34px;
@@ -122,6 +133,9 @@
 }
 
 .hero__actions {
+  position: relative;
+  z-index: 6;
+
   display: flex;
   align-items: center;
   gap: 28px;
@@ -150,12 +164,15 @@
   color: var(--color-primary-light);
 }
 
-/* ASSINATURA MATEMÁTICA */
+/* =========================
+   ASSINATURA MATEMÁTICA
+   ========================= */
 
 .hero__equation {
   position: absolute;
   right: 0;
   bottom: 56px;
+  z-index: 6;
 
   display: flex;
   align-items: center;
@@ -170,7 +187,6 @@
   color: rgba(255, 255, 255, 0.45);
 
   font-size: 0.63rem;
-
   font-weight: 700;
 
   letter-spacing: 0.18em;
@@ -189,6 +205,10 @@
   letter-spacing: 0.05em;
 }
 
+/* =========================
+   ANIMAÇÃO DO PONTO
+   ========================= */
+
 @keyframes heroDot {
   0%,
   100% {
@@ -204,13 +224,18 @@
   }
 }
 
+/* =========================
+   TABLET
+   ========================= */
+
 @media (max-width: 800px) {
   .hero__fade {
     background:
       linear-gradient(
         180deg,
-        rgba(3, 5, 10, 0.55),
-        rgba(3, 5, 10, 0.8)
+        rgba(3, 5, 10, 0.35) 0%,
+        rgba(3, 5, 10, 0.5) 45%,
+        rgba(3, 5, 10, 0.78) 100%
       );
   }
 
@@ -218,6 +243,11 @@
     align-items: flex-end;
 
     padding-bottom: 120px;
+  }
+
+  .hero__content {
+    width: 100%;
+    max-width: 650px;
   }
 
   .hero__title {
@@ -229,19 +259,44 @@
   }
 }
 
+/* =========================
+   MOBILE
+   ========================= */
+
 @media (max-width: 560px) {
+  .hero__container {
+    padding-top: calc(var(--header-height) + 30px);
+    padding-bottom: 90px;
+  }
+
+  .hero__eyebrow {
+    margin-bottom: 20px;
+
+    font-size: 0.6rem;
+  }
+
+  .hero__title {
+    font-size: clamp(3.6rem, 18vw, 5.5rem);
+
+    line-height: 0.88;
+  }
+
+  .hero__description {
+    margin-top: 25px;
+
+    font-size: 0.98rem;
+  }
+
   .hero__actions {
     flex-direction: column;
     align-items: flex-start;
 
     gap: 22px;
+
+    margin-top: 30px;
   }
 
   .hero__actions .button {
     width: auto;
-  }
-
-  .hero__eyebrow {
-    font-size: 0.6rem;
   }
 }

@@ -37,6 +37,8 @@ body {
   font-size: 16px;
   line-height: 1.6;
 
+  overflow-x: hidden;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -45,7 +47,7 @@ body {
   width: 100%;
   min-height: 100vh;
 
-  background: #03050a;
+  background: transparent;
 }
 
 a {
@@ -90,7 +92,7 @@ ol {
 
   padding: 120px 0;
 
-  background: #03050a;
+  background: transparent;
   color: #f8fafc;
 }
 
@@ -172,7 +174,8 @@ ol {
   transition:
     transform 0.2s ease,
     border-color 0.2s ease,
-    background 0.2s ease;
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .button--primary {
@@ -190,6 +193,9 @@ ol {
 
 .button--primary:hover {
   transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 45px rgba(99, 102, 241, 0.35);
 }
 
 .button--secondary {
@@ -198,6 +204,14 @@ ol {
   background: rgba(255, 255, 255, 0.035);
 
   color: #f8fafc;
+}
+
+.button--secondary:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(129, 140, 248, 0.4);
+
+  background: rgba(99, 102, 241, 0.08);
 }
 
 ::selection {
@@ -219,6 +233,51 @@ ol {
   background: #1e293b;
 }
 
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* =========================
+   CAMADA 3D + CONTEÚDO
+   ========================= */
+
+.space-scene {
+  z-index: 0;
+}
+
+.site-content {
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.hero,
+.about,
+.services {
+  background: transparent;
+}
+
+/*
+Cria uma leve camada escura atrás das seções
+sem esconder o fundo 3D.
+*/
+
+.about,
+.services {
+  background: rgba(3, 5, 10, 0.38);
+
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+
 @media (max-width: 768px) {
   .container {
     width: min(calc(100% - 36px), 1240px);
@@ -226,5 +285,11 @@ ol {
 
   .section {
     padding: 85px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(calc(100% - 28px), 1240px);
   }
 }
