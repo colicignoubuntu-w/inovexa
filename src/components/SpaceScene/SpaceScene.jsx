@@ -4,6 +4,9 @@ import { useRef } from 'react'
 import ParticleField from './objects/ParticleField'
 import OrbitalSystem from './objects/OrbitalSystem'
 import LinearCube from './objects/LinearCube'
+import VectorField from './objects/VectorField'
+import CoordinatePlane from './objects/CoordinatePlane'
+
 import SceneController from './SceneController'
 
 import './SpaceScene.css'
@@ -23,7 +26,13 @@ function SceneContent() {
 
       <LinearCube />
 
-      <SceneController targetRef={systemRef} />
+      <CoordinatePlane />
+
+      <VectorField />
+
+      <SceneController
+        targetRef={systemRef}
+      />
     </>
   )
 }
