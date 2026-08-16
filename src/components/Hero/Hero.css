@@ -1,0 +1,247 @@
+.hero {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      #0d1224 0%,
+      #070b14 45%,
+      #03050a 100%
+    );
+}
+
+.hero__fade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 5, 10, 0.92) 0%,
+      rgba(3, 5, 10, 0.68) 37%,
+      rgba(3, 5, 10, 0.15) 65%,
+      rgba(3, 5, 10, 0.2) 100%
+    );
+}
+
+.hero__container {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 100vh;
+
+  padding-top: calc(var(--header-height) + 50px);
+  padding-bottom: 70px;
+}
+
+.hero__content {
+  max-width: 720px;
+}
+
+.hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  margin-bottom: 28px;
+
+  color: var(--color-text-muted);
+
+  font-family: 'Courier New', monospace;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+.hero__eyebrow-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--color-secondary);
+
+  box-shadow: 0 0 18px var(--color-secondary);
+
+  animation: heroDot 2.5s ease-in-out infinite;
+}
+
+.hero__title {
+  color: var(--color-white);
+
+  font-size: clamp(4rem, 9vw, 8rem);
+
+  font-weight: 800;
+
+  line-height: 0.84;
+
+  letter-spacing: -0.075em;
+}
+
+.hero__title-gradient {
+  background:
+    linear-gradient(
+      100deg,
+      #ffffff 0%,
+      #a5b4fc 34%,
+      #67e8f9 70%,
+      #818cf8 100%
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero__description {
+  max-width: 540px;
+
+  margin-top: 34px;
+
+  color: var(--color-text-secondary);
+
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+
+  line-height: 1.65;
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  margin-top: 38px;
+}
+
+.hero__code-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.86rem;
+  font-weight: 600;
+
+  transition: color var(--transition-fast);
+}
+
+.hero__code-link:hover {
+  color: var(--color-white);
+}
+
+.hero__code-link svg {
+  color: var(--color-primary-light);
+}
+
+/* ASSINATURA MATEMÁTICA */
+
+.hero__equation {
+  position: absolute;
+  right: 0;
+  bottom: 56px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  color: rgba(148, 163, 184, 0.35);
+
+  font-family: 'Courier New', monospace;
+}
+
+.hero__equation span {
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 0.63rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.hero__equation-line {
+  width: 50px;
+  height: 1px;
+
+  background: rgba(148, 163, 184, 0.2);
+}
+
+.hero__equation small {
+  font-size: 0.62rem;
+
+  letter-spacing: 0.05em;
+}
+
+@keyframes heroDot {
+  0%,
+  100% {
+    opacity: 0.4;
+
+    box-shadow: 0 0 5px var(--color-secondary);
+  }
+
+  50% {
+    opacity: 1;
+
+    box-shadow: 0 0 20px var(--color-secondary);
+  }
+}
+
+@media (max-width: 800px) {
+  .hero__fade {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3, 5, 10, 0.55),
+        rgba(3, 5, 10, 0.8)
+      );
+  }
+
+  .hero__container {
+    align-items: flex-end;
+
+    padding-bottom: 120px;
+  }
+
+  .hero__title {
+    font-size: clamp(4rem, 19vw, 6.5rem);
+  }
+
+  .hero__equation {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero__actions {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 22px;
+  }
+
+  .hero__actions .button {
+    width: auto;
+  }
+
+  .hero__eyebrow {
+    font-size: 0.6rem;
+  }
+}

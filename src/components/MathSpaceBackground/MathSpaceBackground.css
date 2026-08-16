@@ -1,0 +1,643 @@
+.math-space {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.math-space::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(99, 102, 241, 0.11),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 78% 28%,
+      rgba(6, 182, 212, 0.07),
+      transparent 22%
+    ),
+    radial-gradient(
+      circle at 20% 75%,
+      rgba(99, 102, 241, 0.05),
+      transparent 25%
+    );
+}
+
+/* ESTRELAS */
+
+.math-space__stars {
+  position: absolute;
+  inset: 0;
+}
+
+.math-space__star {
+  position: absolute;
+
+  width: 2px;
+  height: 2px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  animation: starPulse 4s ease-in-out infinite;
+}
+
+.math-space__star--1 {
+  top: 12%;
+  left: 9%;
+}
+
+.math-space__star--2 {
+  top: 21%;
+  left: 23%;
+
+  animation-delay: -1s;
+}
+
+.math-space__star--3 {
+  top: 8%;
+  left: 42%;
+
+  animation-delay: -2s;
+}
+
+.math-space__star--4 {
+  top: 18%;
+  left: 71%;
+}
+
+.math-space__star--5 {
+  top: 34%;
+  left: 91%;
+
+  animation-delay: -3s;
+}
+
+.math-space__star--6 {
+  top: 68%;
+  left: 84%;
+}
+
+.math-space__star--7 {
+  top: 78%;
+  left: 33%;
+
+  animation-delay: -1.5s;
+}
+
+.math-space__star--8 {
+  top: 88%;
+  left: 67%;
+
+  animation-delay: -2.8s;
+}
+
+/*
+Os 40 elementos reutilizam essas posições,
+mas recebem pequenas diferenças pelo nth-child.
+*/
+
+.math-space__star:nth-child(9) {
+  top: 45%;
+  left: 7%;
+}
+
+.math-space__star:nth-child(10) {
+  top: 56%;
+  left: 17%;
+}
+
+.math-space__star:nth-child(11) {
+  top: 31%;
+  left: 38%;
+}
+
+.math-space__star:nth-child(12) {
+  top: 62%;
+  left: 47%;
+}
+
+.math-space__star:nth-child(13) {
+  top: 73%;
+  left: 57%;
+}
+
+.math-space__star:nth-child(14) {
+  top: 16%;
+  left: 58%;
+}
+
+.math-space__star:nth-child(15) {
+  top: 42%;
+  left: 76%;
+}
+
+.math-space__star:nth-child(16) {
+  top: 87%;
+  left: 92%;
+}
+
+.math-space__star:nth-child(17) {
+  top: 5%;
+  left: 81%;
+}
+
+.math-space__star:nth-child(18) {
+  top: 94%;
+  left: 12%;
+}
+
+.math-space__star:nth-child(19) {
+  top: 51%;
+  left: 63%;
+}
+
+.math-space__star:nth-child(20) {
+  top: 26%;
+  left: 53%;
+}
+
+.math-space__star:nth-child(21) {
+  top: 67%;
+  left: 6%;
+}
+
+.math-space__star:nth-child(22) {
+  top: 39%;
+  left: 29%;
+}
+
+.math-space__star:nth-child(23) {
+  top: 83%;
+  left: 44%;
+}
+
+.math-space__star:nth-child(24) {
+  top: 11%;
+  left: 94%;
+}
+
+.math-space__star:nth-child(25) {
+  top: 48%;
+  left: 88%;
+}
+
+.math-space__star:nth-child(26) {
+  top: 72%;
+  left: 73%;
+}
+
+.math-space__star:nth-child(27) {
+  top: 91%;
+  left: 54%;
+}
+
+.math-space__star:nth-child(28) {
+  top: 29%;
+  left: 14%;
+}
+
+.math-space__star:nth-child(29) {
+  top: 36%;
+  left: 69%;
+}
+
+.math-space__star:nth-child(30) {
+  top: 59%;
+  left: 95%;
+}
+
+.math-space__star:nth-child(31) {
+  top: 14%;
+  left: 33%;
+}
+
+.math-space__star:nth-child(32) {
+  top: 76%;
+  left: 20%;
+}
+
+.math-space__star:nth-child(33) {
+  top: 53%;
+  left: 35%;
+}
+
+.math-space__star:nth-child(34) {
+  top: 24%;
+  left: 86%;
+}
+
+.math-space__star:nth-child(35) {
+  top: 84%;
+  left: 77%;
+}
+
+.math-space__star:nth-child(36) {
+  top: 66%;
+  left: 61%;
+}
+
+.math-space__star:nth-child(37) {
+  top: 42%;
+  left: 52%;
+}
+
+.math-space__star:nth-child(38) {
+  top: 7%;
+  left: 17%;
+}
+
+.math-space__star:nth-child(39) {
+  top: 96%;
+  left: 86%;
+}
+
+.math-space__star:nth-child(40) {
+  top: 57%;
+  left: 25%;
+}
+
+/* SVG */
+
+.math-space__geometry {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0.75;
+
+  animation: geometryDrift 25s ease-in-out infinite alternate;
+}
+
+/* EIXOS */
+
+.math-space__axis {
+  fill: none;
+
+  stroke: rgba(148, 163, 184, 0.1);
+
+  stroke-width: 1;
+}
+
+/* VETORES */
+
+.math-space__vectors {
+  fill: rgba(129, 140, 248, 0.65);
+
+  stroke: rgba(129, 140, 248, 0.2);
+
+  stroke-width: 1;
+
+  stroke-dasharray: 5 9;
+
+  animation: vectorPulse 6s ease-in-out infinite;
+}
+
+/* ÓRBITAS */
+
+.math-space__orbits {
+  fill: none;
+
+  stroke: url(#orbitGradient);
+
+  stroke-width: 1;
+}
+
+.math-space__orbits ellipse:nth-child(1) {
+  animation: orbitPulse 7s ease-in-out infinite;
+}
+
+.math-space__orbits ellipse:nth-child(2) {
+  stroke-dasharray: 8 12;
+
+  animation: dashMove 18s linear infinite;
+}
+
+.math-space__orbits ellipse:nth-child(3) {
+  stroke-dasharray: 2 12;
+
+  animation: dashMove 30s linear infinite reverse;
+}
+
+.math-space__orbits ellipse:nth-child(4) {
+  opacity: 0.4;
+
+  stroke-dasharray: 30 20;
+
+  animation: dashMove 45s linear infinite;
+}
+
+/* PLANETAS */
+
+.math-space__planet {
+  fill: var(--color-secondary);
+}
+
+.planet-glow {
+  fill: rgba(34, 211, 238, 0.07);
+}
+
+.math-space__planet--one {
+  animation: planetPulse 4s ease-in-out infinite;
+}
+
+.math-space__planet--two {
+  animation: planetPulse 5.5s ease-in-out infinite reverse;
+}
+
+/* CURVA */
+
+.math-space__curve {
+  fill: none;
+
+  stroke: rgba(34, 211, 238, 0.16);
+
+  stroke-width: 1.2;
+
+  stroke-dasharray: 15 15;
+
+  animation: curveFlow 30s linear infinite;
+}
+
+/* POLÍGONO */
+
+.math-space__polygon {
+  fill: rgba(99, 102, 241, 0.015);
+
+  stroke: rgba(129, 140, 248, 0.13);
+
+  stroke-width: 1;
+
+  animation: polygonFloat 12s ease-in-out infinite;
+}
+
+.math-space__polygon circle {
+  fill: rgba(129, 140, 248, 0.55);
+}
+
+/* CÍRCULOS */
+
+.math-space__rings {
+  fill: none;
+
+  stroke: rgba(34, 211, 238, 0.11);
+
+  stroke-width: 1;
+
+  stroke-dasharray: 3 8;
+
+  transform-origin: 1240px 210px;
+
+  animation: ringsRotate 35s linear infinite;
+}
+
+/* FÓRMULAS */
+
+.math-space__formula {
+  position: absolute;
+
+  color: rgba(148, 163, 184, 0.17);
+
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+
+  letter-spacing: 0.06em;
+
+  animation: formulaFloat 10s ease-in-out infinite;
+}
+
+.math-space__formula--one {
+  top: 19%;
+  left: 8%;
+}
+
+.math-space__formula--two {
+  top: 70%;
+  left: 16%;
+
+  animation-delay: -3s;
+}
+
+.math-space__formula--three {
+  top: 28%;
+  right: 9%;
+
+  animation-delay: -5s;
+}
+
+.math-space__formula--four {
+  bottom: 14%;
+  right: 21%;
+
+  animation-delay: -7s;
+}
+
+.math-space__formula--five {
+  top: 13%;
+  left: 55%;
+
+  animation-delay: -2s;
+}
+
+/* NÚCLEO CENTRAL */
+
+.math-space__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 16px;
+  height: 16px;
+
+  transform: translate(-50%, -50%);
+}
+
+.math-space__center-glow {
+  position: absolute;
+  inset: -50px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(129, 140, 248, 0.2),
+    transparent 70%
+  );
+
+  animation: centerPulse 4s ease-in-out infinite;
+}
+
+.math-space__center-core {
+  position: absolute;
+  inset: 0;
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.8),
+    0 0 35px rgba(129, 140, 248, 0.7);
+}
+
+/* NOISE */
+
+.math-space__noise {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.035;
+
+  background-image:
+    repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      rgba(255, 255, 255, 0.15) 1px,
+      transparent 2px
+    );
+
+  background-size: 8px 8px;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes starPulse {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.8);
+  }
+}
+
+@keyframes geometryDrift {
+  from {
+    transform: translate3d(-8px, -4px, 0) scale(1.01);
+  }
+
+  to {
+    transform: translate3d(10px, 7px, 0) scale(1.025);
+  }
+}
+
+@keyframes dashMove {
+  to {
+    stroke-dashoffset: -400;
+  }
+}
+
+@keyframes curveFlow {
+  to {
+    stroke-dashoffset: -600;
+  }
+}
+
+@keyframes orbitPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes vectorPulse {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.75;
+  }
+}
+
+@keyframes planetPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes polygonFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes ringsRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes formulaFloat {
+  0%,
+  100% {
+    opacity: 0.12;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.35;
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes centerPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+@media (max-width: 768px) {
+  .math-space__formula {
+    font-size: 0.62rem;
+  }
+
+  .math-space__geometry {
+    width: 150%;
+    left: -25%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .math-space *,
+  .math-space *::before,
+  .math-space *::after {
+    animation: none !important;
+  }
+}
