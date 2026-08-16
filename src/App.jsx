@@ -4,6 +4,7 @@ import About from './components/About/About'
 import Services from './components/Services/Services'
 import Projects from './components/Projects/Projects'
 import Technologies from './components/Technologies/Technologies'
+import Team from './components/Team/Team'
 
 import SpaceScene from './components/SpaceScene/SpaceScene'
 
@@ -21,6 +22,7 @@ function App() {
           <Services />
           <Projects />
           <Technologies />
+          <Team />
         </main>
       </div>
     </>
