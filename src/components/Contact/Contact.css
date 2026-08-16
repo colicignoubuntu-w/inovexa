@@ -1,0 +1,386 @@
+.contact {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 140px 0;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 75% 50%,
+      rgba(99, 102, 241, 0.08),
+      transparent 32%
+    );
+}
+
+.contact__container {
+  position: relative;
+  z-index: 5;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(380px, 0.8fr);
+
+  align-items: center;
+
+  gap: 90px;
+}
+
+.contact__content {
+  position: relative;
+  z-index: 6;
+}
+
+.contact__eyebrow {
+  display: inline-block;
+
+  margin-bottom: 22px;
+
+  color: #818cf8;
+
+  font-family: 'Courier New', monospace;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.contact__title {
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      4rem,
+      8vw,
+      8rem
+    );
+
+  font-weight: 800;
+
+  line-height: 0.88;
+
+  letter-spacing: -0.07em;
+}
+
+.contact__title span {
+  background:
+    linear-gradient(
+      100deg,
+      #ffffff,
+      #a5b4fc 35%,
+      #67e8f9 70%,
+      #818cf8
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.contact__description {
+  max-width: 520px;
+
+  margin-top: 28px;
+
+  color: #94a3b8;
+
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.contact__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 17px;
+
+  margin-top: 38px;
+}
+
+.contact__whatsapp {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 11px;
+
+  min-height: 56px;
+
+  padding: 0 22px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6366f1,
+      #06b6d4
+    );
+
+  color: #ffffff;
+
+  font-size: 0.88rem;
+  font-weight: 700;
+
+  box-shadow:
+    0 14px 50px
+    rgba(99, 102, 241, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contact__whatsapp:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 60px
+    rgba(99, 102, 241, 0.38);
+}
+
+.contact__email {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #94a3b8;
+
+  font-size: 0.82rem;
+
+  transition:
+    color 0.2s ease;
+}
+
+.contact__email:hover {
+  color: #ffffff;
+}
+
+/* VISUAL */
+
+.contact__visual {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact__core {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 135px;
+  height: 135px;
+
+  border:
+    1px solid
+    rgba(129, 140, 248, 0.28);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(99, 102, 241, 0.18),
+      rgba(3, 5, 10, 0.7)
+    );
+
+  box-shadow:
+    0 0 75px
+    rgba(99, 102, 241, 0.15);
+
+  animation:
+    contactCorePulse
+    4s
+    ease-in-out
+    infinite;
+}
+
+.contact__core span {
+  color:
+    rgba(255, 255, 255, 0.75);
+
+  font-family:
+    'Courier New',
+    monospace;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.contact__orbit {
+  position: absolute;
+
+  border:
+    1px solid
+    rgba(129, 140, 248, 0.13);
+
+  border-radius: 50%;
+}
+
+.contact__orbit--one {
+  width: 240px;
+  height: 240px;
+
+  animation:
+    contactOrbitOne
+    18s
+    linear
+    infinite;
+}
+
+.contact__orbit--two {
+  width: 360px;
+  height: 190px;
+
+  transform: rotate(-25deg);
+
+  animation:
+    contactOrbitTwo
+    26s
+    linear
+    infinite;
+}
+
+.contact__orbit--three {
+  width: 440px;
+  height: 300px;
+
+  border-style: dashed;
+
+  transform: rotate(32deg);
+
+  animation:
+    contactOrbitThree
+    40s
+    linear
+    infinite;
+}
+
+.contact__point {
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #67e8f9;
+
+  box-shadow:
+    0 0 18px
+    rgba(103, 232, 249, 0.7);
+}
+
+.contact__point--one {
+  top: 26%;
+  left: 29%;
+}
+
+.contact__point--two {
+  top: 58%;
+  right: 20%;
+}
+
+.contact__point--three {
+  bottom: 20%;
+  left: 44%;
+}
+
+@keyframes contactCorePulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes contactOrbitOne {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes contactOrbitTwo {
+  from {
+    transform: rotate(-25deg);
+  }
+
+  to {
+    transform: rotate(335deg);
+  }
+}
+
+@keyframes contactOrbitThree {
+  from {
+    transform: rotate(32deg);
+  }
+
+  to {
+    transform: rotate(-328deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .contact__container {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .contact__visual {
+    max-width: 520px;
+
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact {
+    min-height: auto;
+
+    padding: 100px 0;
+  }
+
+  .contact__title {
+    font-size:
+      clamp(
+        3.5rem,
+        16vw,
+        5.5rem
+      );
+  }
+
+  .contact__visual {
+    transform: scale(0.85);
+  }
+}

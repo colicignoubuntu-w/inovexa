@@ -30,9 +30,7 @@ function SceneContent() {
 
       <VectorField />
 
-      <SceneController
-        targetRef={systemRef}
-      />
+      <SceneController targetRef={systemRef} />
     </>
   )
 }
@@ -47,10 +45,14 @@ function SpaceScene() {
           near: 0.1,
           far: 100,
         }}
-        dpr={[1, 1.5]}
+        dpr={[1, 1.25]}
         gl={{
           alpha: true,
           antialias: true,
+          powerPreference: 'high-performance',
+        }}
+        performance={{
+          min: 0.5,
         }}
       >
         <SceneContent />

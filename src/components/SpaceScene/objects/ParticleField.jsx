@@ -6,7 +6,10 @@ function ParticleField() {
   const pointsRef = useRef()
 
   const positions = useMemo(() => {
-    const particleCount = 1400
+    const particleCount =
+  window.innerWidth <= 768
+    ? 500
+    : 1100
 
     const array = new Float32Array(particleCount * 3)
 
